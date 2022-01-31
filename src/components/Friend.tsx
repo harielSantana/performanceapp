@@ -6,16 +6,33 @@ interface Props {
     id: string;
     name: string;
     likes: number;
+    online: string;
   };
   follow: () => void;
 }
 
 function FriendComponent({ data, follow }: Props) {
   return (
-    <View>
-      <Text>
-        {data.name} - Likes: {data.likes}
-      </Text>
+    <View
+      style={{
+        marginBottom: 10,
+        backgroundColor: "#D8E0E4",
+        borderRadius: 5,
+        padding: 10,
+      }}
+    >
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginBottom: 10,
+        }}
+      >
+        <Text>{data.name}</Text>
+        <Text>Likes: {data.likes}</Text>
+      </View>
+
+      <Text>Online em: {data.online}</Text>
       <TouchableOpacity onPress={follow}>
         <Text>Deixar de seguir</Text>
       </TouchableOpacity>
