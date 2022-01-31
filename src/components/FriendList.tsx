@@ -12,7 +12,7 @@ interface Props {
 
 export function FriendList({ data }: Props) {
   const totalLikes = useMemo(() => {
-    data.reduce((likes, friend) => {
+    return data.reduce((likes, friend) => {
       return likes + friend.likes;
     }, 0);
   }, [data]);
