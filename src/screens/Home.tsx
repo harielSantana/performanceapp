@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import {
   View,
@@ -20,6 +20,10 @@ export function Home() {
     setFriends(data);
   }
 
+  const handleFollow = useCallback(() => {
+    console.log("follow/unfollow");
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Amigos</Text>
@@ -31,7 +35,7 @@ export function Home() {
       <Button title="Buscar" onPress={handleSearch} />
 
       <ScrollView style={styles.list}>
-        <FriendList data={friends} />
+        <FriendList data={friends} follow={handleFollow} />
       </ScrollView>
     </View>
   );
