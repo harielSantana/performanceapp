@@ -50,9 +50,7 @@ export function Home() {
       />
       <Button title="Buscar" onPress={handleSearch} />
 
-      <ScrollView style={styles.list} showsVerticalScrollIndicator={false}>
-        <FriendList data={friends} follow={handleFollow} />
-      </ScrollView>
+      <FriendList data={friends} follow={handleFollow} />
     </View>
   );
 }

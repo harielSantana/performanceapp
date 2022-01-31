@@ -7,7 +7,7 @@ module.exports = () => {
     data.friends.push({
       id: index + 1,
       likes: Math.floor(Math.random() * 3000),
-      name: `Amigo ${index + 1}`,
+      name: `User${Math.floor(Math.random() * 9999)}`,
     });
   }
   return data;
